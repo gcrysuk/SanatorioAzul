@@ -37,57 +37,6 @@
   ======================================================== -->
 </head>
 
-<!-- WhatsApp Flotante -->
-<a href="https://wa.me/5492281423401?text=Hola!%20Quisiera%20hacer%20una%20consulta." 
-   class="whatsapp-float" 
-   target="_blank" 
-   title="Escribinos por WhatsApp">
-  <i class="bi bi-whatsapp"></i>
-</a>
-
-<style>
-  .whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25D366;
-    color: white;
-    font-size: 30px;
-    padding: 15px;
-    border-radius: 50%;
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-    animation: bounce 2s infinite;
-    transition: background-color 0.3s;
-  }
-
-  .whatsapp-float:hover {
-    background-color: #20b358;
-  }
-
-  @keyframes bounce {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-6px);
-    }
-  }
-
-  @media (max-width: 768px) {
-    .whatsapp-float {
-      bottom: 15px;
-      right: 15px;
-      font-size: 26px;
-      padding: 13px;
-    }
-  }
-</style>
-
 
 <body class="index-page">
 
@@ -117,8 +66,8 @@
             <li><a href="#Inicio" class="active">Inicio</a></li>
             <li><a href="#Nosotros">Nosotros</a></li>
             <li><a href="#services">Servicios</a></li>
-            <li><a href="#departments">Departamentos</a></li>
-            <li><a href="#doctors">Médicos</a></li>
+            <li><a href="#departments">Nuestros Equipos Médicos</a></li>
+            <!-- <li><a href="#doctors">Médicos</a></li> 
             <li class="dropdown"><a href="#"><span>Menu</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul>
                 <li><a href="#">Menu1</a></li>
@@ -136,7 +85,7 @@
                 <li><a href="#">Dropdown 4</a></li>
               </ul>
             </li>
-            <li><a href="#contact">Contacto</a></li>
+            <li><a href="#contact">Contacto</a></li> -->
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
@@ -148,6 +97,109 @@
     </div>
 
   </header>
+  
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Video Modal</title>
+  <style>
+    .modal {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      padding: 0;
+      margin: 0;
+    }
+  
+    .modal-content {
+      position: relative;
+      width: 90vw;
+      max-width: 1280px;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      background-color: black;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+  
+    .modal video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+  
+    .close-button {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 2rem;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 10000;
+    }
+  
+    body.modal-open {
+      overflow: hidden;
+    }
+  
+    /* 🔍 Responsive extra para celulares muy pequeños */
+    @media (max-width: 480px) {
+      .modal-content {
+        width: 95vw;
+        aspect-ratio: 9 / 16; /* si el video es vertical, esta proporción ayuda */
+      }
+  
+      .close-button {
+        font-size: 1.5rem;
+        top: 6px;
+        right: 10px;
+      }
+    }
+
+    .sound-button {
+      position: absolute;
+      bottom: 10px;
+      right: 15px;
+      font-size: 1.5rem;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+      z-index: 10000;
+    }
+    
+  </style>
+
+</head>
+<body class="modal-open">
+
+  <div class="modal" id="videoModal">
+    <div class="modal-content">
+      <button class="close-button" onclick="cerrarModal()">✖</button>
+      <button class="sound-button" onclick="activarSonido()">🔊</button>
+      <video id="introVideo" autoplay muted loop>
+        <source src="Sanatorio.mp4" type="video/mp4">
+        Tu navegador no soporta video HTML5.
+      </video>
+    </div>
+  </div>
+
+  <audio id="audioIntro" loop>
+    <source src="intro.mp3" type="audio/mp3">
+    Tu navegador no soporta audio HTML5.
+  </audio>
+  
 
   <main class="main">
 
@@ -188,14 +240,60 @@
           <img src="assets/img/hero-carousel/hero-carousel-4.JPG" alt="">
           <div class="container">
             <h2>Nuestros valores</h2>
-            <ul style="list-style: none; padding-left: 0; display: flex; flex-wrap: wrap; gap: 20px;">
-              <li style="flex: 1 1 150px; font-size: 1.2rem; font-weight: 500;">🟢 Humanismo</li>
-              <li style="flex: 1 1 150px; font-size: 1.2rem; font-weight: 500;">🟢 Respeto</li>
-              <li style="flex: 1 1 150px; font-size: 1.2rem; font-weight: 500;">🟢 Honestidad</li>
-              <li style="flex: 1 1 150px; font-size: 1.2rem; font-weight: 500;">🟢 Ética</li>
-              <li style="flex: 1 1 150px; font-size: 1.2rem; font-weight: 500;">🟢 Compromiso</li>
-            </ul>
+            <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Valores</title>
+  <style>
+    .valores {
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
 
+    .valores li {
+      flex: 1 1 150px;
+      font-size: 1.2rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+    }
+
+    .icono {
+      width: 1em;
+      height: 1em;
+      fill: rgb(48, 9, 153);
+      margin-right: 0.5em;
+    }
+  </style>
+</head>
+<body>
+            <ul class="valores">
+              <li>
+                <svg class="icono" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50"/></svg>
+                Humanismo
+              </li>
+              <li>
+                <svg class="icono" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50"/></svg>
+                Respeto
+              </li>
+              <li>
+                <svg class="icono" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50"/></svg>
+                Honestidad
+              </li>
+              <li>
+                <svg class="icono" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50"/></svg>
+                Ética
+              </li>
+              <li>
+                <svg class="icono" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50"/></svg>
+                Compromiso
+              </li>
+            </ul>
+                           
             <a href="#Nosotros" class="btn-get-started">Leer más</a>
           </div>
         </div><!-- End Carousel Item -->
@@ -232,8 +330,8 @@
           <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
             <div class="service-item position-relative">
               <div class="icon"><i class="fas fa-pills icon"></i></div>
-              <h4><a href="" class="stretched-link">Quienes Somos</a></h4>
-              <p>Breve descrición (recomendable)</p>
+              <h4><a href="quienesomos.html" class="stretched-link">Quienes Somos</a></h4>
+              <p>Sanatorio Azul está conformado por un equipo multidisciplinario  comprometido con la atención integral de la salud......Seguir leyendo</p>
             </div>
           </div><!-- End Service Item -->
 
@@ -248,7 +346,7 @@
           <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
             <div class="service-item position-relative">
               <div class="icon"><i class="fas fa-dna icon"></i></div>
-              <h4><a href="" class="stretched-link">Equipos Médicos</a></h4>
+              <h4><a href="#doctors" class="stretched-link">Equipos Médicos</a></h4>
               <p>Breve descrición (recomendable)</p>
             </div>
           </div><!-- End Service Item -->
@@ -1256,6 +1354,73 @@ Contamos con guardia pasiva permanente para la asistencia de pacientes internado
     </section><!-- /Contact Section -->
 
   </main>
+  
+  <script>
+    function cerrarModal() {
+      const modal = document.getElementById("videoModal");
+      modal.style.display = "none";
+      document.body.classList.remove("modal-open");
+  
+      const video = document.getElementById("introVideo");
+      if (video) {
+        video.pause();
+        video.currentTime = 0;
+      }
+  
+      const audio = document.getElementById("audioIntro");
+      if (audio) {
+        audio.pause();
+        audio.currentTime = 0;
+      }
+    }
+  
+    function activarSonido() {
+      const audio = document.getElementById("audioIntro");
+      if (audio) {
+        audio.muted = false;
+        audio.volume = 1;
+        audio.play();
+      }
+    }
+  
+    window.addEventListener("load", () => {
+      const modalYaMostrado = sessionStorage.getItem("modalMostrado");
+  
+      if (!modalYaMostrado) {
+        // ✅ Mostrar modal y reproducir sonido
+        document.body.classList.add("modal-open");
+  
+        const modal = document.getElementById("videoModal");
+        modal.style.display = "flex";
+  
+        setTimeout(() => {
+          const audio = document.getElementById("audioIntro");
+          if (audio) {
+            const playPromise = audio.play();
+            if (playPromise !== undefined) {
+              playPromise.catch(err => {
+                console.warn("El navegador bloqueó el sonido automático:", err);
+              });
+            }
+          }
+        }, 500);
+  
+        sessionStorage.setItem("modalMostrado", "true");
+  
+      } else {
+        // ✅ No mostrar modal ni reproducir sonido
+        const modal = document.getElementById("videoModal");
+        if (modal) {
+          modal.style.display = "none";
+        }
+        document.body.classList.remove("modal-open");
+      }
+    });
+  </script>
+
+   
+</body>
+</html>
 
   <footer id="footer" class="footer light-background">
 
