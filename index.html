@@ -97,109 +97,6 @@
     </div>
 
   </header>
-  
-  <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Video Modal</title>
-  <style>
-    .modal {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0, 0, 0, 0.85);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      padding: 0;
-      margin: 0;
-    }
-  
-    .modal-content {
-      position: relative;
-      width: 70vw;
-      max-width: 800px;
-      height: auto;
-      aspect-ratio: 16 / 9;
-      background-color: black;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-  
-    .modal video {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: block;
-    }
-  
-    .close-button {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 2rem;
-      color: white;
-      background: none;
-      border: none;
-      cursor: pointer;
-      z-index: 10000;
-    }
-  
-    body.modal-open {
-      overflow: hidden;
-    }
-  
-    /* 🔍 Responsive extra para celulares muy pequeños */
-    @media (max-width: 480px) {
-      .modal-content {
-        width: 95vw;
-        aspect-ratio: 9 / 16; /* si el video es vertical, esta proporción ayuda */
-      }
-  
-      .close-button {
-        font-size: 1.5rem;
-        top: 6px;
-        right: 10px;
-      }
-    }
-
-    .sound-button {
-      position: absolute;
-      bottom: 10px;
-      right: 15px;
-      font-size: 1.5rem;
-      background: rgba(255, 255, 255, 0.2);
-      color: white;
-      border: none;
-      border-radius: 5px;
-      padding: 5px 10px;
-      cursor: pointer;
-      z-index: 10000;
-    }
-    
-  </style>
-
-</head>
-<body class="modal-open">
-
-  <div class="modal" id="videoModal">
-    <div class="modal-content">
-      <button class="close-button" onclick="cerrarModal()">✖</button>
-      <button class="sound-button" onclick="activarSonido()">🔊</button>
-      <video id="introVideo" autoplay muted loop>
-        <source src="Sanatorio.mp4" type="video/mp4">
-        Tu navegador no soporta video HTML5.
-      </video>
-    </div>
-  </div>
-
-  <audio id="audioIntro" loop>
-    <source src="intro.mp3" type="audio/mp3">
-    Tu navegador no soporta audio HTML5.
-  </audio>
-  
 
   <main class="main">
 
@@ -311,6 +208,74 @@
       </div>
 
     </section><!-- /Hero Section -->
+
+<!-- CONTENEDOR del video, centrado y con margen -->
+<div style="display: flex; justify-content: center; margin-top: 40px;">
+  <video
+    id="introVideo"
+    autoplay
+    loop
+    muted
+    playsinline
+    style="width: 640px; max-width: 90%; height: auto; border-radius: 10px;">
+    <source src="Sanatorio.mp4" type="video/mp4">
+    Tu navegador no soporta video HTML5.
+  </video>
+</div>
+
+<!-- AUDIO separado -->
+<audio id="introAudio">
+  <source src="intro.mp3" type="audio/mp3">
+  Tu navegador no soporta audio HTML5.
+</audio>
+
+<!-- BOTÓN debajo del video -->
+<div style="margin-top: 15px; text-align: center;">
+  <button
+    id="soundButton"
+    onclick="toggleSonido()"
+    style="
+      font-size: 1rem;
+      padding: 10px 15px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    ">
+    🔊 Activar sonido
+  </button>
+</div>
+
+<!-- SCRIPT -->
+<script>
+  let sonidoActivo = false;
+
+  function toggleSonido() {
+    const audio = document.getElementById("introAudio");
+    const button = document.getElementById("soundButton");
+
+    if (!audio) return;
+
+    if (!sonidoActivo) {
+      // Activar sonido
+      audio.muted = false;
+      audio.volume = 1;
+      audio.loop = true;
+      audio.play().catch(err => {
+        console.warn("Error al activar sonido:", err);
+      });
+      button.textContent = "🔇 Desactivar sonido";
+      sonidoActivo = true;
+    } else {
+      // Desactivar sonido
+      audio.pause();
+      audio.currentTime = 0;
+      button.textContent = "🔊 Activar sonido";
+      sonidoActivo = false;
+    }
+  }
+</script>
 
     <!-- Featured Services Section -->
     <section id="featured-services" class="featured-services section">
@@ -536,7 +501,7 @@
               <a href="#" class="stretched-link">
                 <h3>Quirófano</h3>
               </a>
-              <p>Quirófanos equipados con tecnología avanzada y un equipo profesional preparado para intervenciones seguras, eficientes y de alta calidad.</p>
+              <p>Quirófanos equipados con tecnología avanzada y un equipo profesional preparado para intervenciones seguras, eficientes y de alta calidad Contamos con cirugía de adultos,  pediátrica y percutánea.</p>
             </div>
           </div><!-- End Service Item -->
 
@@ -1354,70 +1319,7 @@ Contamos con guardia pasiva permanente para la asistencia de pacientes internado
     </section><!-- /Contact Section -->
 
   </main>
-  
-  <script>
-    function cerrarModal() {
-      const modal = document.getElementById("videoModal");
-      modal.style.display = "none";
-      document.body.classList.remove("modal-open");
-  
-      const video = document.getElementById("introVideo");
-      if (video) {
-        video.pause();
-        video.currentTime = 0;
-      }
-  
-      const audio = document.getElementById("audioIntro");
-      if (audio) {
-        audio.pause();
-        audio.currentTime = 0;
-      }
-    }
-  
-    function activarSonido() {
-      const audio = document.getElementById("audioIntro");
-      if (audio) {
-        audio.muted = false;
-        audio.volume = 1;
-        audio.play();
-      }
-    }
-  
-    window.addEventListener("load", () => {
-      const modalYaMostrado = sessionStorage.getItem("modalMostrado");
-  
-      if (!modalYaMostrado) {
-        // ✅ Mostrar modal y reproducir sonido
-        document.body.classList.add("modal-open");
-  
-        const modal = document.getElementById("videoModal");
-        modal.style.display = "flex";
-  
-        setTimeout(() => {
-          const audio = document.getElementById("audioIntro");
-          if (audio) {
-            const playPromise = audio.play();
-            if (playPromise !== undefined) {
-              playPromise.catch(err => {
-                console.warn("El navegador bloqueó el sonido automático:", err);
-              });
-            }
-          }
-        }, 500);
-  
-        sessionStorage.setItem("modalMostrado", "true");
-  
-      } else {
-        // ✅ No mostrar modal ni reproducir sonido
-        const modal = document.getElementById("videoModal");
-        if (modal) {
-          modal.style.display = "none";
-        }
-        document.body.classList.remove("modal-open");
-      }
-    });
-  </script>
-
+ 
    
 </body>
 </html>
