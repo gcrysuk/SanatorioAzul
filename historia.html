@@ -155,11 +155,46 @@
       </div>
     </div>
 
-    <div class="branding d-flex align-items-center">
-      <div class="container position-relative d-flex align-items-center justify-content-end">
-        <a href="index.html" class="logo d-flex align-items-center me-auto">
-          <img src="assets/img/logo.png" alt="">
-        </a>
+     <div class="branding d-flex align-items-center">
+          <div class="container position-relative d-flex align-items-center justify-content-end">
+            <a href="index.html" class="logo d-flex align-items-center me-auto">
+    
+              <!-- VIDEO ícono dentro del header -->
+      <video
+      id="iconVideo"
+      autoplay
+      loop
+      muted
+      playsinline
+      style="
+        width: 200px;
+        max-width: 45vw;
+        height: auto;
+        margin-left: 10px;
+        border-radius: 8px;
+        box-shadow: 0 0 6px rgba(0,0,0,0.3);
+      ">
+      <source src="Sanatorio.mp4" type="video/mp4">
+      Tu navegador no soporta video HTML5.
+    </video>
+    </div>
+              <!--<img src="assets/img/logo.png" alt=""> -->
+              <!-- Uncomment the line below if you also wish to use a text logo -->
+              <!-- <h1 class="sitename">Medicio</h1>  -->
+            </a>
+            <style>
+              #navmenu ul {
+                padding-left: 40px; /* empuja los textos a la derecha */
+              }
+            
+              #navmenu ul li a {
+                font-size: 1.1rem; /* agranda el texto */
+                padding: 10px 15px; /* espacio interno */
+                display: inline-block;
+                font-weight: 500;
+              }
+            </style>
+
         <nav id="navmenu" class="navmenu">
           <ul>
             <li><a href="index.html#Inicio">Inicio</a></li>
