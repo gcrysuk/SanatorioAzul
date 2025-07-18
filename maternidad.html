@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Hemoterapia - Donantes</title>
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Poppins&family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    .custom-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      padding: 40px 0;
+    }
+
+    .custom-gallery img {
+      width: 200px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .custom-gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 8px;
+    }
+
+    .modal:target {
+      display: flex;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 30px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .close:hover {
+      color: red;
+    }
+
+    .section-title h2 {
+      font-weight: bold;
+      font-size: 32px;
+    }
+  </style>
+</head>
+
+<!-- WhatsApp Flotante
+<a href="https://wa.me/5492281423401?text=Hola!%20Quisiera%20hacer%20una%20consulta." 
+   class="whatsapp-float" 
+   target="_blank" 
+   title="Escribinos por WhatsApp">
+  <i class="bi bi-whatsapp"></i>
+</a>
+
+<style>
+  .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    font-size: 30px;
+    padding: 15px;
+    border-radius: 50%;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    animation: bounce 2s infinite;
+    transition: background-color 0.3s;
+  }
+
+  .whatsapp-float:hover {
+    background-color: #20b358;
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .whatsapp-float {
+      bottom: 15px;
+      right: 15px;
+      font-size: 26px;
+      padding: 13px;
+    }
+  }
+</style>
+ -->
+
+<body class="index-page">
+
+  <!-- Header -->
+  <header id="header" class="header sticky-top">
+    <div class="topbar d-flex align-items-center">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="d-none d-md-flex align-items-center"></div>
+        <div class="d-flex align-items-center">
+          <i class="bi bi-phone me-1"></i> Contactate con nosotros al 2281-423401
+        </div>
+      </div>
+    </div>
+
+     <div class="branding d-flex align-items-center">
+          <div class="container position-relative d-flex align-items-center justify-content-end">
+            <a href="index.html" class="logo d-flex align-items-center me-auto">
+    
+              <!-- VIDEO ícono dentro del header -->
+      <video
+      id="iconVideo"
+      autoplay
+      loop
+      muted
+      playsinline
+      style="
+        width: 200px;
+        max-width: 45vw;
+        height: auto;
+        margin-left: 10px;
+        border-radius: 8px;
+        box-shadow: 0 0 6px rgba(0,0,0,0.3);
+      ">
+      <source src="Sanatorio.mp4" type="video/mp4">
+      Tu navegador no soporta video HTML5.
+    </video>
+    </div>
+              <!--<img src="assets/img/logo.png" alt=""> -->
+              <!-- Uncomment the line below if you also wish to use a text logo -->
+              <!-- <h1 class="sitename">Medicio</h1>  -->
+            </a>
+            <style>
+              #navmenu ul {
+                padding-left: 40px; /* empuja los textos a la derecha */
+              }
+            
+              #navmenu ul li a {
+                font-size: 1.1rem; /* agranda el texto */
+                padding: 10px 15px; /* espacio interno */
+                display: inline-block;
+                font-weight: 500;
+              }
+            </style>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html#Inicio">Inicio</a></li>
+            <li><a href="index.html#Nosotros">Nosotros</a></li>
+            <li><a href="index.html#services">Servicios</a></li>
+            <li><a href="index.html#doctors">Nuestros Equipos Médicos</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <section class="section">
+      <div class="container section-title text-center" data-aos="fade-up">
+        <h2>Maternidad</h2>
+        <div style="max-width: 800px; margin: 0 auto; text-align: justify; font-family: sans-serif; line-height: 1.6;">
+            <p>
+              Acompañamos cada nacimiento con dedicación, profesionalismo y calidez. Nuestro servicio de maternidad cuenta con salas de preparto, parto, quirófano y recepción del recién nacido, diseñadas para brindar contención y seguridad en un momento tan especial. 
+              El equipo interdisciplinario (entre los que se encuentran ginecólogos, obstétricas y pediatras) participa activamente durante todo el proceso, priorizando siempre el bienestar de la madre, el bebé y su familia.
+            </p>
+          
+            <p>
+              Asimismo, contamos con el servicio de <strong>Puericultura</strong>: Cada nacimiento es acompañado con la presencia dedicada de nuestra puericultora, Ines Van Gelderen, quien se acerca a cada madre para brindarle orientación, apoyo y confianza en la lactancia. 
+              Promovemos una lactancia consciente, fortalecemos el vínculo temprano y estamos presentes con sensibilidad y conocimiento en un momento tan significativo.
+            </p>
+          
+            <p><strong>Porque cuidar desde el inicio también es parte de nuestra vocación.</strong></p>
+          </div>
+                   
+      </div>
+
+ </main>
+
+  <!-- Footer -->
+  <footer id="footer" class="footer light-background">
+    <div class="container text-center">
+      <p>&copy; 2025 Sanatorio Azul - Desarrollado por <a href="https://focustech.com.ar">FocusTech</a></p>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    const lightbox = GLightbox({
+      selector: '.glightbox'
+    });
+  </script>
+
+</body>
+
+</html>
