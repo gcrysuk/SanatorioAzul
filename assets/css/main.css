@@ -1967,6 +1967,20 @@ section,
   color: var(--accent-color);
 }
 
+.scroll-container {
+  max-height: 400px; /* Ajustá este valor según lo que necesites */
+  overflow-y: auto;
+}
+
+.nav-scroll .nav-link {
+  text-align: left;
+  text-justify: inter-word;
+  white-space: normal;  /* Por si algún texto era cortado */
+}
+
+
+
+
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
