@@ -1978,6 +1978,21 @@ section,
   white-space: normal;  /* Por si algún texto era cortado */
 }
 
+.custom-gallery a img {
+  width: 200px; /* o el tamaño que quieras */
+  height: 200px;
+  object-fit: cover; /* recorta sin deformar */
+  border-radius: 5px; /* opcional */
+  margin: 5px;
+}
+
+.team-member .member-img img {
+  width: 100%;
+  height: 300px; /* o el alto que quieras */
+  object-fit: cover; /* recorta la imagen sin deformar */
+}
+
+
 
 
 
