@@ -1991,6 +1991,8 @@ section,
   height: 300px; /* o el alto que quieras */
   object-fit: cover; /* recorta la imagen sin deformar */
 }
+.modal { z-index: 2000; }
+.modal-backdrop { z-index: 1990; }
 
 
 
