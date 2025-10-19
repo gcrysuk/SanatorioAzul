@@ -1314,7 +1314,43 @@
       <!-- UN SOLO swiper-wrapper -->
       <div class="swiper-wrapper">
 
-        <!-- Noticia 1 -->
+         <!-- Noticia 1 -->
+           <div class="swiper-slide">
+             <div class="testimonial-item">
+               <img src="assets/img/testimonials/cirujanos.jpg" class="testimonial-img" alt="cirujanos" style="width:200px; height:200px; object-fit:cover; border-radius:8px;">
+               <h3>26 de Septiembre, hoy celebramos a los cirujanos</h3>
+               <p>La labor del cirujano no solo exige conocimiento y precisión...</p>
+               <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalcirujano">
+                 <i class="bi bi-arrows-fullscreen"></i> Leer más
+               </button>
+             </div>
+           </div>
+
+         <!-- Noticia 2 -->
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <img src="assets/img/testimonials/madre2025.jpg" class="testimonial-img" alt="madre2025" style="width:200px; height:200px; object-fit:cover; border-radius:8px;">
+              <h3>19 de Octubre, día de la madre...</h3>
+              <p>19 de Octubre, día de la madre y día mundial de la lucha contra el cancer de mama, desde Sanatrio Azul...</p>
+              <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalMadre2025">
+                <i class="bi bi-arrows-fullscreen"></i> Leer más
+              </button>
+            </div>
+          </div>
+
+         <!-- Noticia 3 -->
+         <div class="swiper-slide">
+           <div class="testimonial-item">
+             <img src="assets/img/testimonials/anestesista.jpg" class="testimonial-img" alt="Anestesistas" style="width:200px; height:200px; object-fit:cover; border-radius:8px;">
+             <h3>16 de Octubre, reconocemos la importancia de los anestesistas</h3>
+             <p>Hoy reconocemos la excelencia y dedicación de los anestesiólogos...</p>
+             <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalAnestesista">
+               <i class="bi bi-arrows-fullscreen"></i> Leer más
+             </button>
+           </div>
+         </div>
+
+        <!-- Noticia 4 -->
         <div class="swiper-slide">
           <div class="testimonial-item">
             <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="Semana Lactancia" style="width:200px; height:200px; object-fit:cover; border-radius:8px;">
@@ -1326,7 +1362,7 @@
           </div>
         </div>
 
-        <!-- Noticia 2 -->
+        <!-- Noticia 5 -->
         <div class="swiper-slide">
           <div class="testimonial-item">
             <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="Día del Nutricionista" style="width:200px; height:200px; object-fit:cover; border-radius:8px;">
@@ -1347,6 +1383,44 @@
 </section>
 
 <!-- Modales fuera del swiper -->
+
+<div class="modal fade" id="modalMadre2025" tabindex="-1" aria-labelledby="modalMadreLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalLactanciaLabel">19 de Octubre, día de la madre...</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body" style="text-align:justify;">
+        19 de Octubre, día de la madre y día mundial de la lucha contra el cáncer de mama, desde Sanatrio Azul saludamos a todas las mamás, 
+        a las familias y renovamos nuestro compromiso con la salud
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalAnestesista" tabindex="-1" aria-labelledby="modalMadreLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalLactanciaLabel">16 de Octubre, reconocemos la importancia de los anestesistas</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body" style="text-align:justify;">
+        Hoy reconocemos la excelencia y dedicación de los anestesiólogos 🙌🏻
+        El rol del anestesista fue revolucionario para la medicina ya que nos permitió realizar cirugías y procedimientos sin dolor 👏🏻
+        Un saludo especial a nuestro equipo y a todos los colegas 💙
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="modal fade" id="modalLactancia" tabindex="-1" aria-labelledby="modalLactanciaLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content">
@@ -1381,6 +1455,23 @@
        inmunitario, previene enfermedades y mejora la calidad de vida en todas las edades. 
        En el Sanatorio Azul aprovechamos esta fecha para felicitar a todas las nutricionistas de la comunicad, 
        gracias por su labor y por cuidar nuestra salud.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalcirujano" tabindex="-1" aria-labelledby="modalCirujanoLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalLactanciaLabel">26 de Septiembre, hoy celebramos a los cirujanos</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body" style="text-align:justify;">
+        La labor del cirujano no solo exige conocimiento y precisión, sino también compromiso, empatía y vocación de servicio
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
