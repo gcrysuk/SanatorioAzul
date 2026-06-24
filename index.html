@@ -40,6 +40,103 @@
 
 <body class="index-page">
 
+  <!-- Popup Inicio Start -->
+  <style>
+    #popup-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 999999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.75);
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    #popup-overlay.popup-hidden {
+      display: none;
+    }
+
+    #popup-content {
+      position: relative;
+      max-width: 95vw;
+      max-height: 92vh;
+      display: flex;
+    }
+
+    #popup-content img {
+      max-width: 100%;
+      max-height: 92vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    #popup-close {
+      position: absolute;
+      top: -14px;
+      right: -14px;
+      width: 40px;
+      height: 40px;
+      border: none;
+      border-radius: 50%;
+      background: #fff;
+      color: #333;
+      font-size: 24px;
+      line-height: 1;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+      transition: transform 0.15s ease;
+    }
+
+    #popup-close:hover {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 575px) {
+      #popup-close {
+        top: 6px;
+        right: 6px;
+      }
+    }
+  </style>
+
+  <div id="popup-overlay">
+    <div id="popup-content">
+      <button id="popup-close" type="button" aria-label="Cerrar">&times;</button>
+      <img src="assets/img/Alquiler_de_consultorios.jpeg" alt="Consultorios disponibles para alquiler - Sanatorio Azul">
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const overlay = document.getElementById('popup-overlay');
+      const closeBtn = document.getElementById('popup-close');
+
+      function cerrarPopup() {
+        overlay.classList.add('popup-hidden');
+      }
+
+      closeBtn.addEventListener('click', cerrarPopup);
+
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) cerrarPopup();
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') cerrarPopup();
+      });
+    })();
+  </script>
+  <!-- Popup Inicio End -->
+
   <header id="header" class="header sticky-top">
 
     <!--div class="topbar d-flex align-items-center">
